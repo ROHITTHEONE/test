@@ -1,4 +1,4 @@
-import dogGif from "../assets/dog.gif";
+import dogGif from "../assets/dog.png";
 
 const Error = () => {
   return (
@@ -7,7 +7,7 @@ const Error = () => {
         <img
           src={dogGif}
           alt='Gif preview of the work'
-          className='w-auto h-72 mx-auto'
+          className='w-full mx-auto'
         />
       </div>
     </div>

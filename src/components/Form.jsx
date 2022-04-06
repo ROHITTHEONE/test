@@ -2,7 +2,7 @@ import Button from "./Button";
 
 const Form = () => {
   return (
-    <div className='mt-10 w-full bg-black p-8 pb-12'>
+    <div className='mt-10 w-full bg-black p-8 pb-12 md:px-14'>
       <div>
         <input
           className='border-b-2 border-orange-500  bg-transparent outline-none w-full mb-6 text-sm'

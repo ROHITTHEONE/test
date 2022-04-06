@@ -6,9 +6,14 @@ import { useState } from "react";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [active, setActive] = useState("home");
 
   const handleMenu = (e) => {
     setShowMenu(!showMenu);
+  };
+
+  const handleActive = (e) => {
+    setActive(e.target.id);
   };
 
   window.addEventListener("click", (e) => {
@@ -19,7 +24,7 @@ const Navbar = () => {
 
   return (
     <div className='flex justify-between align-center h-16 px-4 py-2'>
-      <div></div>
+      <div className='lg:hidden'></div>
       <img
         src={logo}
         alt='website logo'
@@ -30,16 +35,19 @@ const Navbar = () => {
           id='menu'
           src={menu}
           alt='ham burger manu icon'
-          className='w-auto h-8 mt-2'
+          className='w-auto h-8 mt-2 lg:hidden'
           onClick={handleMenu}
         />
         <div
           className={`${
             showMenu ? "show" : "hide"
-          } flex flex-col text-white bg-gray-900 absolute top-14 -right-4 z-20 px-8 py-10 text-xl overflow-x-auto w-60 space-y-8`}
+          } flex flex-col text-white bg-gray-900 absolute top-14 -right-4 z-20 px-8 py-10 text-xl overflow-x-auto w-60 space-y-8 lg:hidden`}
         >
           <Links />
           <Social />
+        </div>
+        <div className='hidden lg:block space-x-10 text-lg font-semibold mt-2'>
+          <Links handleActive={handleActive} active={active} />
         </div>
       </div>
     </div>
